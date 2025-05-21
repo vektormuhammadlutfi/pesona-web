@@ -12,4 +12,8 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  build: {
+    outDir: 'dist', // Menentukan folder output untuk build
+    emptyOutDir: true, // Mengosongkan folder output sebelum build
+  },
 });
