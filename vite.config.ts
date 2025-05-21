@@ -13,7 +13,13 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   build: {
-    outDir: 'dist', // Menentukan folder output untuk build
-    emptyOutDir: true, // Mengosongkan folder output sebelum build
+    outDir: 'dist',
+    emptyOutDir: true,
+  },
+  server: {
+    host: '0.0.0.0', // Untuk mendengarkan dari semua alamat
+  },
+  preview: {
+    allowedHosts: ['pesona-web.onrender.com'], // Tambahkan host Anda di sini
   },
 });
