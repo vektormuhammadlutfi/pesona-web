@@ -12,4 +12,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  preview: {
+    allowedHosts: ['pesona-web.onrender.com'],
+  },
 });
