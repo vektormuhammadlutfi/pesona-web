@@ -3,12 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-    "scripts": {
-      "dev": "bun run vite",
-      "build": "bun run tsc -b && bun run vite build",
-      "lint": "bun run eslint .",
-      "preview": "bun run vite preview"
-    },
+  "scripts": {
+    "dev": "bun run vite",
+    "build": "bun run tsc -b && bun run vite build",
+    "lint": "bun run eslint .",
+    "preview": "bun run vite preview",
+    "start": "bun run vite preview --host"
+  },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
     "@radix-ui/react-accordion": "^1.2.0",
