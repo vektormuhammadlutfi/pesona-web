@@ -17,9 +17,9 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
-    host: '0.0.0.0', // Untuk mendengarkan dari semua alamat
+    host: '0.0.0.0', // Allows listening on all addresses
   },
   preview: {
-    allowedHosts: ['pesona-web.onrender.com'], // Tambahkan host Anda di sini
+    allowedHosts: ['pesona-web.onrender.com'], // Make sure this matches Render’s URL
   },
 });

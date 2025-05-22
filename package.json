@@ -8,7 +8,7 @@
     "build": "bun run tsc -b && bun run vite build",
     "lint": "bun run eslint .",
     "preview": "bun run vite preview",
-    "start": "bun run vite preview --host"
+    "start": "bun run serve dist"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -56,6 +56,7 @@
     "react-resizable-panels": "^2.1.3",
     "react-router-dom": "^7.0.0",
     "recharts": "^2.12.7",
+    "serve": "^14.2.4",
     "sonner": "^1.5.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
