@@ -23,7 +23,7 @@ const distDir = join(__dirname, 'dist');
 
 Bun.serve({
   port,
-  fetch(req) {
+  async fetch(req) {
     // Extract the path from the request URL, removing the leading slash
     const path = req.url.substring(1); 
 
@@ -34,7 +34,7 @@ Bun.serve({
       const file = Bun.file(filePath);
       // Handle index.html for root requests
       if (path === "" || path === "index.html") {
-        return new Response(file.text(), {
+        return new Response(await file.text(), {
           headers: {
             "Content-Type": "text/html"
           }
@@ -42,7 +42,7 @@ Bun.serve({
       } else {
         const ext = path.split(".").pop();
         const contentType = getContentType(ext);
-        return new Response(file.text(), {
+        return new Response(await file.text(), {
           headers: {
             "Content-Type": contentType
           }
