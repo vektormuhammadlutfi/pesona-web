@@ -5,8 +5,8 @@ import { Slider } from "@/components/ui/slider";
 import { Label } from "@/components/ui/label";
 import { ProductListParams } from "@/types";
 import { PriceFormatter } from "@/components/ui/price-formatter";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Star, ShieldCheck } from "lucide-react";
+// import { Checkbox } from "@/components/ui/checkbox";
+// import { Star, ShieldCheck } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 interface FilterSidebarProps {

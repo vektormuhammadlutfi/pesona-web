@@ -12,9 +12,9 @@ export async function fetchProducts(params: Partial<ProductListParams> = {}): Pr
   };
 
   const queryParams = { ...defaultParams, ...params };
-  const queryString = new URLSearchParams(
-    Object.entries(queryParams).map(([key, value]) => [key, String(value)])
-  ).toString();
+  // const queryString = new URLSearchParams(
+  //   Object.entries(queryParams).map(([key, value]) => [key, String(value)])
+  // ).toString();
 
   try {
     const response = await fetch(`${API_URL}/product.list?input=${encodeURIComponent(JSON.stringify(queryParams))}`);

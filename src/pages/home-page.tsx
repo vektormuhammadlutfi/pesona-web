@@ -3,7 +3,6 @@ import { fetchProducts } from "@/lib/api";
 import { ProductGrid } from "@/components/product-grid";
 import { FilterSidebar } from "@/components/filter-sidebar";
 import { ProductListParams, ProductListResponse } from "@/types";
-import { Separator } from "@/components/ui/separator";
 import { useToast } from "@/hooks/use-toast";
 import { Pagination } from "@/components/ui/pagination";
 import { useSearchParams } from "react-router-dom";

@@ -148,7 +148,7 @@ export function ProductDetailPage() {
           
           <Card className="border-orange-200">
             <CardContent className="p-4 space-y-4">
-              <PriceFormatter price={product.price} size="xl" className="text-orange-600" />
+              <PriceFormatter price={product.price} size="lg" className="text-orange-600" />
               
               <div className="text-sm text-muted-foreground">
                 <span>Min. order: {Math.max(1, Math.floor(Math.random() * 10))} pieces</span>
