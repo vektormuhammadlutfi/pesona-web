@@ -8,7 +8,7 @@
     "build": "bun run tsc -b && bun run vite build",
     "lint": "bun run eslint .",
     "preview": "bun run vite preview",
-    "start": "bun run server.ts"
+    "start": "bun run vite preview --host"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

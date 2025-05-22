@@ -1,11 +1,12 @@
-import { defineConfig } from 'vite';
+import path from 'path';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': './src',
+      '@': path.resolve(__dirname, './src'),
     },
   },
   optimizeDeps: {
@@ -14,14 +15,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     emptyOutDir: true,
-    rollupOptions: {
-      input: './index.html', // Adjust this if your entry HTML is elsewhere
-    },
   },
   server: {
-    host: '0.0.0.0',
+    host: '0.0.0.0', // Untuk mendengarkan dari semua alamat
   },
   preview: {
-    allowedHosts: ['pesona-web.onrender.com'],
+    allowedHosts: ['pesona-web.onrender.com'], // Tambahkan host Anda di sini
   },
 });
