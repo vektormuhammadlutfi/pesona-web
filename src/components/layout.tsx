@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 export function Layout() {
   return (
-    <div className="flex min-h-screen flex-col">
+    <div>
       <Header />
       <main className="flex-1">
         <Outlet />
