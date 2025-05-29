@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { Smartphone, Globe, Menu, Search } from "lucide-react"
+import { Smartphone, Globe, Menu } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Input } from "@/components/ui/input"
