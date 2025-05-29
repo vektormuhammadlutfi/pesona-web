@@ -24,7 +24,7 @@ export function ProductDetailPage() {
   useEffect(() => {
     async function loadProduct() {
       if (!slug) return;
-      
+
       setIsLoading(true);
       try {
         const { product } = await fetchProductBySlug(slug);
@@ -55,24 +55,24 @@ export function ProductDetailPage() {
             </Button>
           </Link>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Skeleton className="aspect-square w-full rounded-lg" />
-          
+
           <div className="space-y-6">
             <div className="space-y-2">
               <Skeleton className="h-8 w-3/4" />
               <Skeleton className="h-6 w-1/4" />
             </div>
-            
+
             <Skeleton className="h-12 w-1/3" />
-            
+
             <div className="space-y-2">
               <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-full" />
               <Skeleton className="h-4 w-3/4" />
             </div>
-            
+
             <Skeleton className="h-10 w-full" />
           </div>
         </div>
@@ -106,9 +106,10 @@ export function ProductDetailPage() {
           </Button>
         </Link>
       </div>
-      
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="overflow-hidden border-0 md:border">
+        {/* Adjusted Card border for dark mode */}
+        <Card className="overflow-hidden border-0 md:border md:dark:border-muted">
           <AspectRatio ratio={1/1} className="bg-muted">
             <img
               src={product.imageUrl}
@@ -120,24 +121,26 @@ export function ProductDetailPage() {
             />
           </AspectRatio>
         </Card>
-        
+
         <div className="space-y-6">
           <div>
             <div className="flex items-start justify-between mb-2">
               <h1 className="text-2xl md:text-3xl font-bold">{product.name}</h1>
+              {/* Adjusted text color for dark mode */}
               {isVerified && (
-                <div className="flex items-center gap-1 text-blue-600">
+                <div className="flex items-center gap-1 text-blue-600 dark:text-blue-400">
                   <ShieldCheck className="h-5 w-5" />
                   <span>Verified</span>
                 </div>
               )}
             </div>
-            
+
             <div className="flex items-center gap-4 text-sm">
               <div className="flex items-center gap-1">
                 <div className="flex">
+                  {/* Adjusted star color for dark mode */}
                   {Array.from({ length: rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400 dark:fill-yellow-500 dark:text-yellow-500" />
                   ))}
                 </div>
                 <span className="text-muted-foreground">({reviews} reviews)</span>
@@ -145,24 +148,26 @@ export function ProductDetailPage() {
               <Badge variant="secondary">{product.category.name}</Badge>
             </div>
           </div>
-          
-          <Card className="border-orange-200">
+
+          {/* Adjusted Card border for dark mode */}
+          <Card className="border-orange-200 dark:border-orange-700">
             <CardContent className="p-4 space-y-4">
-              <PriceFormatter price={product.price} size="lg" className="text-orange-600" />
-              
+              {/* Adjusted price color for dark mode */}
+              <PriceFormatter price={product.price} size="lg" className="text-orange-600 dark:text-orange-400" />
+
               <div className="text-sm text-muted-foreground">
                 <span>Min. order: {Math.max(1, Math.floor(Math.random() * 10))} pieces</span>
               </div>
             </CardContent>
           </Card>
-          
+
           <div className="space-y-2">
             <h3 className="font-medium">Product Description</h3>
             <p className="text-muted-foreground whitespace-pre-line">
               {product.description}
             </p>
           </div>
-          
+
           <div>
             <h3 className="font-medium mb-2">Specifications</h3>
             <Card>
@@ -178,25 +183,27 @@ export function ProductDetailPage() {
               </CardContent>
             </Card>
           </div>
-          
+
           <Separator />
-          
+
           <div className="flex flex-wrap items-center gap-4">
             <div className="flex items-center gap-2 text-sm">
               <Package className="h-4 w-4 text-muted-foreground" />
+              {/* Adjusted stock text color for dark mode */}
               <span className={product.stockQuantity > 0 ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"}>
-                {product.stockQuantity > 0 
-                  ? `${product.stockQuantity} in stock` 
+                {product.stockQuantity > 0
+                  ? `${product.stockQuantity} in stock`
                   : "Out of stock"}
               </span>
             </div>
-            
+
             <div className="flex gap-2 ml-auto w-full sm:w-auto">
               <Button variant="outline" className="flex-1 sm:flex-none">
                 <MessageCircle className="mr-2 h-4 w-4" />
                 Contact Supplier
               </Button>
-              <Button className="flex-1 sm:flex-none bg-orange-500 hover:bg-orange-600" disabled={product.stockQuantity <= 0}>
+              {/* Adjusted button background for dark mode */}
+              <Button className="flex-1 sm:flex-none bg-orange-500 hover:bg-orange-600 dark:bg-orange-600 dark:hover:bg-orange-700" disabled={product.stockQuantity <= 0}>
                 <ShoppingCart className="mr-2 h-4 w-4" />
                 Start Order
               </Button>

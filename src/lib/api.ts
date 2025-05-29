@@ -40,8 +40,8 @@ export async function fetchProductBySlug(slug: string): Promise<ProductResponse>
     }
 
     const data = await response.json();
-    // Corrected the path to access the product data
-    return { product: data.result.data.json.products[0] }; 
+    // Adjusted to match the actual API response structure
+    return { product: data.result.data.json };
   } catch (error) {
     console.error(`Error fetching product with slug ${slug}:`, error);
     throw error;
